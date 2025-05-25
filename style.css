@@ -7,11 +7,11 @@
     --fontUni: UnifrakturMaguntia;
     --fontPop: Poppins;
 
-    --background-black: rgb(204, 171, 51);
+    --background-button: #041f8e,;
     --backfontwhite: white;
 
-    --background-black: white;
-    --backfont: rgb(0, 54, 116);
+    --background-black: rgb(152, 24, 24);
+    --backfont: rgb(13, 59, 112);
 
 }
 *, html{
@@ -26,7 +26,8 @@ body{
     font-family: var(--fontPop);
 }
 .header{
- 
+    background-image: url(assets/pngwing.com\ \(5\).png);
+    background-blend-mode:difference;
     height: 7vh;
     width: 100%;
     display: flex;
@@ -37,7 +38,20 @@ body{
     position:fixed;
     background-color: rgb(226, 220, 207);
 }
-
+.titleParent{
+    padding-top: 7%;
+    text-align: center;
+}
+.title-space{
+    font-family: var(--fontUni);
+    font-size: 50px;
+}
+.for-space{
+    border: 2px solid green;
+    height: 80dvh;
+    margin-top: 44%;
+    background-color: #041f8e;
+}
 .rightTop{
     display: flex;
     margin-right: 20px;
@@ -58,7 +72,6 @@ body{
     outline: 0;
     border: 0;
     font-size: 18px;
-    background-color: 0;
 }
 .moon:hover{
     cursor: pointer;
@@ -80,21 +93,34 @@ body{
     font-size: 15px;
     outline: 0;
     border: 0;
-    background-color: 0;
+    color: 0;
+    background-color: transparent;
+
+}
+.unbordered:hover{
+    cursor: pointer;
+    opacity: .7;
+    
+}
+.unbordered:active{
+    color: rgb(32, 43, 167);
+    opacity: 1;
 }
 .bordered{
-    font-weight: 700;
-    font-size: 16px;
-    padding: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 5px;
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 20px;
+    border-radius: 25px;
     border: 1px solid black;
     cursor: pointer;
+    box-shadow: 1px 1px 2px rgba(0,0,0.1);
 }
 .bordered:active{
-    background-color: var(--backfont);
+    background-color: var(--yellow);
     color: var(--backfontwhite);
+    outline: 2px solid rgb(191, 181, 43);
 }
 .bodily{
     display: grid;
@@ -132,6 +158,10 @@ body{
     height: 150%;
     justify-self: center;
     align-self: center;
+    background-color: rgb(222, 219, 235);
+    background-blend-mode: color-dodge;
+    background-repeat: no-repeat;
+    background-image: url(assets/pngwing.com\ \(5\).png);
 }
 .feedback{
     color: rgb(59, 57, 57);
@@ -166,21 +196,40 @@ body{
     margin-bottom: 50px;
 }
 .earth{
-    
-  animation: move 2s linear infinite;
+    scale: 1.5;
+    transition: all 1s;
+    transform-origin:bottom;
+    margin-bottom: -1px;
+    animation: move 2s linear infinite;
 }
 @keyframes move {
-    to {
-        transform: rotate(360deg);
-    }    
+   0%{transform: rotate(0deg); scale: 1.7;}
+   50%{transform: rotateX(90deg); scale: 1.6;}
+   100%{transform: rotate(0deg); scale: 1.7;}
+}
+.spring{
+    scale: 1.2;
+    rotate: 35.8deg;
+    transition: all 1s;
+    transform-origin:bottom;
+    margin-bottom: -1px;
+    animation: jump 2s linear infinite;
 }
 
-
+ul{
+    padding: 10px;
+    font-size: 14px;
+}
+li:hover, u:hover{
+    animation: disap 2s linear infinite;
+    transition: all .2s ease;
+}
 .footerNav{
     height: 8dvh;
     display: flex;
     width: 100%;
     border: 1px solid;
+
 }
 .left{
     margin-left: 10px;
@@ -188,13 +237,69 @@ body{
     margin: 5px;
 }
 .image_text_time{
+    cursor:default;
     text-align: left;
     padding: 20px;
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(43, 40, 40);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+    background-image: url(assets/pngwing.com\ \(6\).png);
+    background-size: 20%;
 }
-.set >.image_text_time .active{
-    display: block;
+u{
+    cursor: pointer;
+    color: rgb(1, 30, 75);
+    font-weight: 700;
+}
+.linkToSections{
+    font-family: var(--fontPop);
+    cursor: pointer;
+    margin: 60px;
+    font-weight: 500;
+    font-size: medium;
+    color: black;
+   
+}
+.linksSingles{
+     padding: 8px;
+}
+.linksSingles:hover{
+    color: var(--background-black);
+}
+a{
+    text-decoration: 0;
+    color: var(--backfont);
+    background-color: var(--asshy);
+    
+}
+a:hover{
+    background-color: var(--background-button);
+}
+.titleParent{
+    margin-left: 20%;
+    margin-right: 20% ;
+}
+#quizBorder{
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    margin-top: 30px;
+    border-radius: 30px;
+    background-color: #d7dbe8;
+}
+#quizQuestion{
+    border-radius: 20px;
+    background-color: hsl(228, 24%, 84%);
+    font-weight: 700;
+    margin: 22px 5px;
+    box-shadow: 2px 3px 10px rgba(0,0,0.8);
+    padding: 5px;
+    line-height: 1.4;
+}
+#quizOptions{
+    background-color: #eae3de;
+    margin-top: 3px;
+    text-align: left;
+    padding-left: 45px;
+    padding-bottom: 25px ;
 }
